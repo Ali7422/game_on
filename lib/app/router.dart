@@ -1,0 +1,84 @@
+import 'package:go_router/go_router.dart';
+import '../features/bank/presentation/bank_screen.dart';
+import '../features/categories/presentation/categories_screen.dart';
+import '../features/ehbd_sah/presentation/GuessRightScreen.dart';
+import '../features/home/presentation/home_screen.dart';
+import '../features/offside/presentation/offside_screen.dart';
+import '../features/onboarding/presentation/onboarding_screen.dart';
+import '../features/password/presentation/password_screen.dart';
+import '../features/risk_challenge/presentation/risk_challenge_screen.dart';
+import '../features/splash/presentation/splash_screen.dart';
+import '../features/three_in_one/presentation/ThreeInOneScreen.dart';
+import '../features/three_in_one/presentation/three_in_one_setup_screen.dart';
+import '../features/top_10/presentation/top_10_screen.dart';
+import '../features/who_am_i/presentation/who_am_i_screen.dart';
+import '../features/who_is_in_picture/presentation/who_is_in_picture_screen.dart';
+import '../features/xo/presentation/xo_screen.dart';
+
+class AppRouter {
+  static final GoRouter router = GoRouter(
+    initialLocation: '/splash',
+    routes: [
+      GoRoute(
+        path: '/splash',
+        builder: (context, state) => const SplashScreen(),
+      ),
+      GoRoute(
+        path: '/onboarding',
+        builder: (context, state) => const OnboardingScreen(),
+      ),
+      GoRoute(
+        path: '/home',
+        builder: (context, state) => const HomeScreen(),
+      ),
+      GoRoute(
+        path: '/categories',
+        builder: (context, state) => const CategoriesScreen(),
+      ),
+      GoRoute(
+        path: '/bank',
+        builder: (context, state) => const BankScreen(),
+      ),
+      GoRoute(
+        path: '/password',
+        builder: (context, state) => const PasswordScreen(),
+      ),
+      GoRoute(
+        path: '/three-in-one-setup',
+        builder: (context, state) => const ThreeInOneSetupScreen(),
+      ),
+      GoRoute(
+        path: '/ThreeInOneScreen',
+        builder: (context, state) => const ThreeInOneScreen(playerNames: [],),
+      ),
+      GoRoute(
+        path: '/top-10',
+        builder: (context, state) => const Top10Screen(),
+      ),
+      GoRoute(
+        path: '/who-is-in-picture',
+        builder: (context, state) => const WhoIsInPictureScreen(),
+      ),
+      GoRoute(
+        path: '/who-am-i',
+        builder: (context, state) => const WhoAmIScreen(),
+      ),
+      GoRoute(
+        path: '/risk-challenge',
+        builder: (context, state) => const RiskChallengeScreen(),
+      ),
+      GoRoute(
+        path: '/GuessRightScreen',
+        builder: (context, state) => const GuessRightScreen(),
+      ),
+      GoRoute(
+        path: '/XOXOChallengeScreen',
+        builder: (context, state) => const XOChallengeScreen(),
+      ),
+      GoRoute(
+        path: '/OffsideChallengeScreen',
+        builder: (context, state) => const OffsideChallengeScreen(),
+      ),
+    ],
+  );
+}
