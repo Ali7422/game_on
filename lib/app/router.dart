@@ -1,19 +1,22 @@
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+
+import '../features/auth/presentation/forgot_password_screen.dart';
+import '../features/auth/presentation/login_screen.dart';
+import '../features/auth/presentation/otp_screen.dart';
+import '../features/auth/presentation/signup_screen.dart';
 import '../features/bank/presentation/bank_screen.dart';
 import '../features/categories/presentation/categories_screen.dart';
-import '../features/ehbd_sah/presentation/GuessRightScreen.dart';
 import '../features/home/presentation/home_screen.dart';
-import '../features/offside/presentation/offside_screen.dart';
 import '../features/onboarding/presentation/onboarding_screen.dart';
 import '../features/password/presentation/password_screen.dart';
 import '../features/risk_challenge/presentation/risk_challenge_screen.dart';
 import '../features/splash/presentation/splash_screen.dart';
-import '../features/three_in_one/presentation/ThreeInOneScreen.dart';
 import '../features/three_in_one/presentation/three_in_one_setup_screen.dart';
 import '../features/top_10/presentation/top_10_screen.dart';
 import '../features/who_am_i/presentation/who_am_i_screen.dart';
 import '../features/who_is_in_picture/presentation/who_is_in_picture_screen.dart';
-import '../features/xo/presentation/xo_screen.dart';
+
 
 class AppRouter {
   static final GoRouter router = GoRouter(
@@ -48,10 +51,6 @@ class AppRouter {
         builder: (context, state) => const ThreeInOneSetupScreen(),
       ),
       GoRoute(
-        path: '/ThreeInOneScreen',
-        builder: (context, state) => const ThreeInOneScreen(playerNames: [],),
-      ),
-      GoRoute(
         path: '/top-10',
         builder: (context, state) => const Top10Screen(),
       ),
@@ -68,16 +67,20 @@ class AppRouter {
         builder: (context, state) => const RiskChallengeScreen(),
       ),
       GoRoute(
-        path: '/GuessRightScreen',
-        builder: (context, state) => const GuessRightScreen(),
+        path: '/login',
+        builder: (context, state) => const LoginScreen(),
       ),
       GoRoute(
-        path: '/XOXOChallengeScreen',
-        builder: (context, state) => const XOChallengeScreen(),
+        path: '/signup',
+        builder: (context, state) => const SignUpScreen(),
       ),
       GoRoute(
-        path: '/OffsideChallengeScreen',
-        builder: (context, state) => const OffsideChallengeScreen(),
+        path: '/otp',
+        builder: (context, state) => const OtpScreen(),
+      ),
+      GoRoute(
+        path: '/forgot',
+        builder: (context, state) => const ForgotPasswordScreen(),
       ),
     ],
   );
