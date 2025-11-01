@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/theme/app_colors.dart';
+import '../../../widgets/persistent_bottom_nav_bar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -10,18 +11,25 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.darkPitch,
       body: SafeArea(
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _buildUserStatsRow(context),
-              const SizedBox(height: 32),
-              _buildMainIllustration(context),
-              const SizedBox(height: 32),
-              _buildChallengeCards(context),
-            ],
-          ),
+        child: Column(
+          children: [
+            Expanded(
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.all(16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _buildUserStatsRow(context),
+                    const SizedBox(height: 32),
+                    _buildMainIllustration(context),
+                    const SizedBox(height: 32),
+                    _buildChallengeCards(context),
+                  ],
+                ),
+              ),
+            ),
+            const PersistentBottomNavBar(currentIndex: 0),
+          ],
         ),
       ),
     );

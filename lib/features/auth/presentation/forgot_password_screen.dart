@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../core/theme/game_on_theme.dart';
 
@@ -34,7 +35,9 @@ class ForgotPasswordScreen extends StatelessWidget {
 								const Spacer(),
 								ElevatedButton(
 									style: GameOnTheme.primaryButtonStyle,
-									onPressed: () {},
+									onPressed: () {
+										context.go('/otp');
+									},
 									child: const Text('إرسال'),
 								),
 								const SizedBox(height: 12),

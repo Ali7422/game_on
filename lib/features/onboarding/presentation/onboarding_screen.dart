@@ -39,14 +39,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     ),
   ];
 
-  @override
-  void initState() {
-    super.initState();
-    // التحويل التلقائي بعد 2 ثانية إلى شاشة تسجيل الدخول
-    Future.delayed(const Duration(seconds: 2), () {
-      if (mounted) context.go('/login');
-    });
-  }
+
 
   @override
   void dispose() {
